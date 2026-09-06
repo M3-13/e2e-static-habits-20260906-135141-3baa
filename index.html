@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit-Tracker</title>
+    <link rel="stylesheet" href="css/base.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <h1 class="app-header__title">Habit-Tracker</h1>
+        <div class="app-header__controls">
+          <div class="app-header__filter" role="group" aria-label="Filter">
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="active"
+              aria-pressed="true"
+            >
+              Aktiv
+            </button>
+            <button
+              class="filter-btn"
+              type="button"
+              data-filter="archived"
+              aria-pressed="false"
+            >
+              Archiviert
+            </button>
+          </div>
+          <div class="app-header__actions">
+            <button
+              id="export-btn"
+              class="icon-button"
+              type="button"
+              aria-label="Exportieren"
+            >
+              <span aria-hidden="true">⬇</span>
+            </button>
+            <button
+              id="import-btn"
+              class="icon-button"
+              type="button"
+              aria-label="Importieren"
+            >
+              <span aria-hidden="true">⬆</span>
+            </button>
+            <input
+              id="import-input"
+              type="file"
+              accept="application/json,.json"
+              hidden
+            />
+            <button
+              id="theme-toggle"
+              class="icon-button"
+              type="button"
+              aria-label="Dark Mode umschalten"
+            >
+              <span aria-hidden="true">◐</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section id="empty-state" class="empty-state">
+        <div class="empty-state__icon" aria-hidden="true">＋</div>
+        <h2 class="empty-state__title">Noch keine Gewohnheiten</h2>
+        <p class="empty-state__desc">
+          Lege deine erste Gewohnheit an, um zu starten.
+        </p>
+        <input
+          id="habit-name-input"
+          class="empty-state__input"
+          type="text"
+          placeholder="z. B. Wasser trinken"
+          autocomplete="off"
+        />
+        <button id="create-habit-btn" class="button button--primary empty-state__button" type="button">
+          Gewohnheit anlegen
+        </button>
+      </section>
+
+      <div id="habit-list" class="habit-list"></div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
