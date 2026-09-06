@@ -85,7 +85,7 @@ export function weeklyQuota(checks) {
     if (set.has(toLocalDateString(d))) fulfilled += 1;
   }
 
-  return elapsed === 0 ? 0 : Math.round((fulfilled / elapsed) * 100);
+  return Math.round((fulfilled / elapsed) * 100);
 }
 
 function badge(label, value, stat) {
