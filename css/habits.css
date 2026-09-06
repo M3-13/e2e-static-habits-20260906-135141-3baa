@@ -1,0 +1,36 @@
+/* css/habits.css — Stile für das Anlegen, die Inline-Umbenennung und das Löschen
+   einer Gewohnheit. Tokens aus DESIGN.md (in css/base.css deklariert). */
+
+/* Inline-Umbenennung: Eingabefeld ersetzt den Karten-Namen. */
+.habit-card__name-input {
+  height: 44px;
+  padding: 0 14px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--color-fg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.habit-card__name-input::placeholder {
+  color: var(--color-muted);
+}
+
+.habit-card__name-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent_soft);
+  outline: none;
+}
+
+/* Löschen-Button: Gefahrenfarbe statt Akzent. */
+.habit-card__actions [data-action="delete"] {
+  color: var(--color-danger);
+}
+
+.habit-card__actions [data-action="delete"]:hover {
+  background: var(--color-danger_soft);
+}
