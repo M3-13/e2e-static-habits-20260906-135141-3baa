@@ -95,11 +95,12 @@ export function validateData(raw) {
     if (!Array.isArray(entry.checks)) continue;
     if (typeof entry.archived !== "boolean") continue;
     if (typeof entry.createdAt !== "string") continue;
+    if (!entry.checks.every(isValidCheck)) continue;
 
     result.push({
       id: entry.id,
       name: entry.name,
-      checks: entry.checks.filter(isValidCheck),
+      checks: entry.checks.slice(),
       archived: entry.archived,
       createdAt: entry.createdAt,
     });
