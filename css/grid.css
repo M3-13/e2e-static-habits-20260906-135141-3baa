@@ -1,0 +1,62 @@
+/* css/grid.css — 30-Tage-Raster, Zellen, Häkchen und Statistik-Badges.
+   Tokens aus DESIGN.md (DayCell, Badge, Layout Principles). */
+
+.habit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+  gap: 6px;
+}
+
+.habit-grid__cell {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: 18px;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.habit-grid__cell:hover {
+  border-color: var(--color-accent);
+}
+
+.habit-grid__cell:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.habit-grid__cell.is-checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.habit-grid__cell.is-today {
+  outline: 2px solid var(--color-accent_soft);
+  outline-offset: 2px;
+}
+
+.habit-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.habit-stats__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent_soft);
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
